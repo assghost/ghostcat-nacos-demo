@@ -1,0 +1,1 @@
+docker-compose -f .\ghostcat-nacos-demo.yml up --build -d

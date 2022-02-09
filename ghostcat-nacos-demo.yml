@@ -1,0 +1,28 @@
+version: "2"
+services:
+  data-service:
+    build: ./data-service/
+    image: ghostcat-nacos/data-service:latest
+    networks:
+      - nacos-server_default
+    ports:
+      - "8840:8840"
+  hello-service:
+    build: ./hello-service/
+    image: ghostcat-nacos/hello-service:latest
+    networks:
+      - nacos-server_default
+    ports:
+      - "8839:8839"
+  gateway-service:
+    build: ./gateway-service/
+    image: ghostcat-nacos/gateway-service:latest
+    networks:
+      - nacos-server_default
+    ports:
+      - "8838:8838"
+
+networks:
+  nacos-server_default:
+    external: true
+    name: nacos-server_default

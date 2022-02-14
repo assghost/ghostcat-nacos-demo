@@ -1,0 +1,4 @@
+#Please keep this configuration file
+spring:
+  application:
+    name: oauth-service
